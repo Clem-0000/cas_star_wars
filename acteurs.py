@@ -1,11 +1,15 @@
 class Acteur:
 
-    def __init__(self, nom, prenom):
+    def __init__(self, nom, prenom, acteur_personnage):
         self.nom = nom,
-        self.prenom = prenom
+        self.prenom = prenom,
+        self.acteur_personnage = acteur_personnage
 
     def __str__(self):
         return 'Acteur(nom =' + str(self.nom) + ' ,prenom =' + str(self.prenom) + ')'
+
+    # def nombre_personage(self, nom_perso):
+
 
     # GETTER AND SETTER
     def get_nom(self):
@@ -19,3 +23,9 @@ class Acteur:
 
     def set_prenom(self, prenom):
         self.prenom = prenom
+
+    def get_acteur_personnage(self):
+        return self.acteur_personnage
+
+    def set_acteur_personnage(self, acteur_personnage):
+        self.acteur_personnage = acteur_personnage

@@ -1,16 +1,20 @@
 class Film:
 
-    def __init__(self, titre, annee_sortie, num_episode, cout, recette):
+    def __init__(self, titre, annee_sortie, num_episode, cout, recette, acteur=None):
+        if acteur is None:
+            acteur = []
         self.titre = titre,
         self.annee_sortie = annee_sortie,
         self.num_episode = num_episode,
         self.cout = cout,
-        self.recette = recette
+        self.recette = recette,
+        # attribut acteur Q7
+        self.acteur_film = acteur
 
     def __str__(self):
         return 'Film(titre =' + str(self.titre) + ' ,annee_sortie =' + str(self.annee_sortie) \
                + ' ,num_episode =' + str(self.num_episode) + ' ,cout =' + str(self.cout) \
-               + ' ,recette =' + str(self.recette) + ')'
+               + ' ,recette =' + str(self.recette) + ' ,acteur_film =' + str(self.acteur_film) + ')'
 
     # GETTER AND SETTER
     def get_titre(self):
@@ -42,3 +46,9 @@ class Film:
 
     def set_recette(self, recette):
         self.recette = recette
+
+    def get_acteur_film(self):
+        return self.acteur_film
+
+    def set_acteur_film(self, acteur):
+        self.acteur_film = acteur
