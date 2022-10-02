@@ -1,7 +1,7 @@
 class Personnage:
 
     def __init__(self, nom_perso, prenom_perso):
-        self.nom_perso = nom_perso,
+        self.nom_perso = nom_perso
         self.prenom_perso = prenom_perso
 
     def __str__(self):

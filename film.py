@@ -1,13 +1,16 @@
+import acteurs
+
+
 class Film:
 
     def __init__(self, titre, annee_sortie, num_episode, cout, recette, acteur=None):
         if acteur is None:
             acteur = []
-        self.titre = titre,
-        self.annee_sortie = annee_sortie,
-        self.num_episode = num_episode,
-        self.cout = cout,
-        self.recette = recette,
+        self.titre = titre
+        self.annee_sortie = annee_sortie
+        self.num_episode = num_episode
+        self.cout = cout
+        self.recette = recette
         # attribut acteur Q7
         self.acteur_film = acteur
 
@@ -15,6 +18,32 @@ class Film:
         return 'Film(titre =' + str(self.titre) + ' ,annee_sortie =' + str(self.annee_sortie) \
                + ' ,num_episode =' + str(self.num_episode) + ' ,cout =' + str(self.cout) \
                + ' ,recette =' + str(self.recette) + ' ,acteur_film =' + str(self.acteur_film) + ')'
+
+    def nb_acteur(self):
+        return len(self.acteur_film)
+
+    def nb_personnage(self):
+        nb_personnage = 0
+        for acteur in self.acteur_film:
+            nb_personnage += acteur.nombre_personage()
+        return nb_personnage
+
+    def calcul_benefice(self):
+        montant_benefice = 0
+        beneficiaire = False
+        if self.recette > self.cout:
+            montant_benefice = self.recette - self.cout
+            beneficiaire = True
+        else:
+            montant_benefice = self.cout - self.recette
+        est_beneficiaire = (montant_benefice, beneficiaire)
+        return est_beneficiaire
+
+    def isBefore(self, annee):
+        if self.annee_sortie < annee:
+            return True
+        else:
+            return False
 
     # GETTER AND SETTER
     def get_titre(self):

@@ -31,4 +31,29 @@ saga = [film1, film2, film3]
 # appel de la fonction parcour_collection_obj
 parcour_collection_obj(saga)
 
-isinstance()
+# création d'un acteur incarnant deux personnages
+personnage_joue1 = personnage.Personnage("Anakin", "Skywalker")
+personnage_joue2 = personnage.Personnage("Dark", "Vador")
+personnage_joue_harry = personnage.Personnage("Han", "Solo")
+
+est_acteur = acteurs.Acteur("Hayden", "Christensen", (personnage_joue1, personnage_joue2))
+est_acteur2 = acteurs.Acteur("Harrisson", "Ford", personnage_joue_harry)
+
+saga_acteurs = [est_acteur, est_acteur2]
+
+# retourne le nombre de personnage incarnés par l'acteur
+print("nombre personnage incarnés par l'acteur", est_acteur.nombre_personage())
+
+# test de la fonction de calcul du nombre d'acteur
+saga[2].set_acteur_film(saga_acteurs)
+print("nombre acteur", saga[2].nb_acteur())
+
+# test de la fonction de calcul du nombre de personnage
+print("nombre personnage : ", saga[2].nb_personnage())
+
+# test de la fonction de calcul des bénéfices
+print("bénéfice? : ", saga[2].calcul_benefice())
+
+# test de la fonction isBefore()
+year = int(input("saisir une année : "))
+print("est sortie avant votre année proposé : ", saga[2].isBefore(year))
