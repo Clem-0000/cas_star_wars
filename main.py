@@ -59,7 +59,7 @@ saga[2].set_acteur_film(saga_acteurs)
 print("nombre acteur", saga[2].nb_acteur())
 
 # test de la fonction de calcul du nombre de personnage
-# print("nombre personnage : ", saga[2].nb_personnage())
+print("nombre personnage : ", saga[2].nb_personnage())
 
 # test de la fonction de calcul des bénéfices
 print("bénéfice? : ", saga[2].calcul_benefice())

@@ -49,7 +49,8 @@ class Film:
         """
         nb_personnage = 0
         for acteur in self.acteur_film:
-            nb_personnage += acteur.nombre_personage()
+            for acteur2 in acteur:
+                nb_personnage += acteur2.nombre_personage()
         return nb_personnage
 
     def calcul_benefice(self):
