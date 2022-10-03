@@ -11,10 +11,8 @@ class Acteur:
         return 'Acteur(nom =' + str(self.nom) + ' ,prenom =' + str(self.prenom) + ')'
 
     def nombre_personage(self):
-        nombre_personnage = 0
-        for personnage in self.acteur_personnage:
-            nombre_personnage += 1
-        return nombre_personnage
+        print(type(self.acteur_personnage))
+        return len(self.acteur_personnage)
 
     # GETTER AND SETTER
     def get_nom(self):
