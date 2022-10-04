@@ -49,27 +49,28 @@ personnage_joue_harry = personnage.Personnage("Han", "Solo")
 est_acteur = acteurs.Acteur("Hayden", "Christensen", (personnage_joue1, personnage_joue2))
 est_acteur2 = acteurs.Acteur("Harrisson", "Ford", (personnage_joue_harry,))
 
+# création d'une collection d'acteurs
 saga_acteurs = [est_acteur, est_acteur2]
 
-# retourne le nombre de personnage incarnés par l'acteur
-print("nombre personnage incarnés par l'acteur", est_acteur.nombre_personage())
+# retourne le nombre de personnages incarnés par l'acteur
+print(f"fonction nb_personnage class Acteur : nombre personnage incarnés par l'acteur {est_acteur.nom} {est_acteur.prenom} : {est_acteur.nombre_personage()} ")
 
-# test de la fonction de calcul du nombre d'acteur
+# test de la fonction de calcul du nombre d'acteurs
 saga[2].set_acteur_film(saga_acteurs)
-print("nombre acteur", saga[2].nb_acteur())
+print("fonction nb_acteur : nombre acteur", saga[2].nb_acteur())
 
-# test de la fonction de calcul du nombre de personnage
-print("nombre personnage : ", saga[2].nb_personnage())
+# test de la fonction de calcul du nombre de personnages
+print("fonction nb_personnage class Film : nombre personnage : ", saga[2].nb_personnage())
 
 # test de la fonction de calcul des bénéfices
-print("bénéfice? : ", saga[2].calcul_benefice())
+print("fonction bénéfice: bénéfice? : ", saga[2].calcul_benefice())
 
 # test de la fonction isBefore()
 year = int(input("saisir une année : "))
-print("est sortie avant votre année proposé : ", saga[2].isBefore(year))
+print("fonction isBefore : est sortie avant votre année proposé : ", saga[2].isBefore(year))
 
 # test de la fonction tri
 saga[2].tri_acteur()
 
 # test de la fonction mackBackUp
-make_back_up({1977: film1})
+print("question 13", make_back_up({1977: film1}))
