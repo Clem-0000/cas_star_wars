@@ -80,14 +80,15 @@ class Film:
 
     def tri_acteur(self):
         """
-        trie les acteurs dans un ordre alphabétique
+        trie les acteurs dans un ordre alphabétique par méthode buble sort
         :return: une collection d'acteur triée alphabétiquement
         """
-        print(self.acteur_film)
-        for i in self.acteur_film:
-            print("e",type(i))
-            print(i)
-
+        for i in range(len(self.acteur_film) - 1):
+            for j in range(i + 1, len(self.acteur_film)):
+                if self.get_acteur_film()[i].nom > self.get_acteur_film()[j].nom:
+                    temp = self.acteur_film[i]
+                    self.acteur_film[i] = self.acteur_film[j]
+                    self.acteur_film[j] = temp
 
 
     # GETTER AND SETTER

@@ -17,7 +17,7 @@ def make_back_up(dict_film):
     :return: l'année le titre et le bénéfice
     """
     for objet_film in dict_film.items():
-        print(str(objet_film[0])+" - "+str(objet_film[1].titre)+" - "+str(objet_film[1].calcul_benefice()[0]))
+        return str(objet_film[0]) + " - " + str(objet_film[1].titre) + " - " + str(objet_film[1].calcul_benefice()[0])
 
 
 # création de 3 film
@@ -45,15 +45,20 @@ parcour_collection_obj(saga)
 personnage_joue1 = personnage.Personnage("Anakin", "Skywalker")
 personnage_joue2 = personnage.Personnage("Dark", "Vador")
 personnage_joue_harry = personnage.Personnage("Han", "Solo")
+personnage_Natalie = personnage.Personnage("Reine", "Padme")
+personnage_Ewan = personnage.Personnage("Obi-Wan", "Kenobi")
 
 est_acteur = acteurs.Acteur("Hayden", "Christensen", (personnage_joue1, personnage_joue2))
 est_acteur2 = acteurs.Acteur("Harrisson", "Ford", (personnage_joue_harry,))
+est_acteur3 = acteurs.Acteur("Portman", "Natalie", (personnage_Natalie,))
+est_acteur4 = acteurs.Acteur("Mcgregor", "Ewan", (personnage_Ewan,))
 
 # création d'une collection d'acteurs
-saga_acteurs = [est_acteur, est_acteur2]
+saga_acteurs = [est_acteur, est_acteur2, est_acteur3, est_acteur4]
 
 # retourne le nombre de personnages incarnés par l'acteur
-print(f"fonction nb_personnage class Acteur : nombre personnage incarnés par l'acteur {est_acteur.nom} {est_acteur.prenom} : {est_acteur.nombre_personage()} ")
+print(
+    f"fonction nb_personnage class Acteur : nombre personnage incarnés par l'acteur {est_acteur.nom} {est_acteur.prenom} : {est_acteur.nombre_personage()} ")
 
 # test de la fonction de calcul du nombre d'acteurs
 saga[2].set_acteur_film(saga_acteurs)
@@ -70,7 +75,17 @@ year = int(input("saisir une année : "))
 print("fonction isBefore : est sortie avant votre année proposé : ", saga[2].isBefore(year))
 
 # test de la fonction tri
+listeNomActeurTrie = []
+for i in saga[2].acteur_film:
+    listeNomActeurTrie.append(i.nom)
+print("liste des acteurs avant le trie : ", listeNomActeurTrie)
+
 saga[2].tri_acteur()
 
+listeNomActeurTrie = []
+for i in saga[2].acteur_film:
+    listeNomActeurTrie.append(i.nom)
+print("liste des acteurs après le trie : ", listeNomActeurTrie)
+
 # test de la fonction mackBackUp
-print("question 13", make_back_up({1977: film1}))
+print("question 13 : ", make_back_up({1977: film1}))
